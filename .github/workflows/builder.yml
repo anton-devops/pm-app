@@ -34,7 +34,7 @@ jobs:
         with:
           registry: ${{ env.DOCKER_URL }}
           username: ${{ github.actor }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       -
         name: Create temp .env file
         run: |
