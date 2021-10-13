@@ -94,3 +94,46 @@ mkdocs build
 ```
 
 Скрипт инициализации базы находится в `assets/schema.sql`
+
+---------------------------------------------------------------------------------------------
+
+## Инструкция по запуску
+
+  1. клонируем репозиторий
+
+        git clone https://github.com/anton-devops/pm-app.git
+
+  2. заходим в папку .github (здесь находятся файлы, связанные только с пайплайном)
+
+        cd .github/
+
+  3. создаём файл .env (содержимое можно создавать своим, если сфоркать в свой репозиторий, так же нужно создать секреты в своём репозитории для переменных POSTGRES_PASSWORD и DOCKER_PASSWORD):
+
+        cat << EOF > .env
+        VER='v1.0.0'
+        POSTGRES_USER='postgres'
+        POSTGRES_HOST='db'
+        POSTGRES_PASSWORD='postgres'
+        POSTGRES_DB='postgres'
+        IMAGE_URL='ghcr.io/anton-devops/pm-app'
+        DOCKER_URL='ghcr.io'
+        DOCKER_USER='anton-devops'
+        DOCKER_PASSWORD='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'
+        EOF
+
+4. стартуем само приложение, базу и документацию коммандой:
+
+        ./runner.sh v1.0.0
+
+    где v1.0.0 версия релиза. Если не указать версию, то запустится дефолтная (v1.0.0)
+
+5. проверяем:
+
+    записываем текущую дату (согласно задания) в базу:
+
+        curl -X POST http://localhost
+
+    далее в браузере или через curl проверяем доступность сервисов:
+
+        curl http://localhost       # должен вернуть дату, которую записали в базу коммандой выше
+        сurl http://docs.localhost  # возвращает страницу с документацией (см. задание)
