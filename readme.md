@@ -101,25 +101,25 @@ mkdocs build
 
   1. клонируем репозиторий
 
-        git clone https://github.com/anton-devops/pm-app.git
+          git clone https://github.com/anton-devops/pm-app.git
 
   2. заходим в папку .github (здесь находятся файлы, связанные только с пайплайном)
 
-        cd .github/
+          cd .github/
 
   3. создаём файл .env (содержимое можно создавать своим, если сфоркать в свой репозиторий, так же нужно создать секреты в своём репозитории для переменных POSTGRES_PASSWORD и DOCKER_PASSWORD):
-
-        cat << EOF > .env
-        VER='v1.0.0'
-        POSTGRES_USER='postgres'
-        POSTGRES_HOST='db'
-        POSTGRES_PASSWORD='postgres'
-        POSTGRES_DB='postgres'
-        IMAGE_URL='ghcr.io/anton-devops/pm-app'
-        DOCKER_URL='ghcr.io'
-        DOCKER_USER='anton-devops'
-        DOCKER_PASSWORD='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'
-        EOF
+          
+          cat << EOF > .env
+          VER='v1.0.0'
+          POSTGRES_USER='postgres'
+          POSTGRES_HOST='db'
+          POSTGRES_PASSWORD='postgres'
+          POSTGRES_DB='postgres'
+          IMAGE_URL='ghcr.io/anton-devops/pm-app'
+          DOCKER_URL='ghcr.io'
+          DOCKER_USER='anton-devops'
+          DOCKER_PASSWORD='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'
+          EOF
 
 4. стартуем само приложение, базу и документацию коммандой:
 
