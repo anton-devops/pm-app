@@ -28,6 +28,7 @@ echo
 
 clear_images
 
+echo "INFO: running app:${VER}"
 docker-compose up --no-build -d
 
 docker ps | grep IMAGE
