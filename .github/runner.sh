@@ -7,7 +7,7 @@ set -e
 project_name='pm-app'
 services="docs app db proxy"
 
-[[ ${1} ]] && VER=${1}
+[[ ${1} ]] && export VER=${1}
 
 function clear_images(){
 	### FOR CLEANING IMAGES UNCOMENT BELOW LINE
