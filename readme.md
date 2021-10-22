@@ -109,15 +109,15 @@ mkdocs build
 
   3. создаём файл .env (содержимое можно создавать своим, если сфоркать в свой репозиторий, так же нужно создать секреты в своём репозитории для переменных POSTGRES_PASSWORD и DOCKER_PASSWORD):
           
-          echo VER='v1.0.0' >> .env
-          echo POSTGRES_USER='postgres' >> .env
-          echo POSTGRES_HOST='db' >> .env
-          echo POSTGRES_PASSWORD='postgres' >> .env
-          echo POSTGRES_DB='postgres' >> .env
-          echo IMAGE_URL='ghcr.io/anton-devops/pm-app' >> .env
-          echo DOCKER_URL='ghcr.io' >> .env
-          echo DOCKER_USER='anton-devops' >> .env
-          echo DOCKER_PASSWORD='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' >> .env
+          echo "VER='v1.0.0'" >> .env
+          echo "POSTGRES_USER='postgres'" >> .env
+          echo "POSTGRES_HOST='db'" >> .env
+          echo "POSTGRES_PASSWORD='postgres'" >> .env
+          echo "POSTGRES_DB='postgres'" >> .env
+          echo "IMAGE_URL='ghcr.io/anton-devops/pm-app'" >> .env
+          echo "DOCKER_URL='ghcr.io'" >> .env
+          echo "DOCKER_USER='anton-devops'" >> .env
+          echo "DOCKER_PASSWORD='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'" >> .env
 
 4. стартуем само приложение, базу и документацию коммандой:
 
