@@ -16,7 +16,8 @@ function clear_images(){
 	docker volume prune -f
 }
 
-docker login ${DOCKER_URL} -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+### for privet access to registry uncomment string below
+# docker login ${DOCKER_URL} -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
 
 sudo find -type d -name data|xargs -I {} sudo chown -R ${USER}:${USER} {}
 
@@ -33,4 +34,3 @@ docker-compose up --no-build -d
 
 docker ps | grep IMAGE
 docker ps | grep ${project_name}
-
