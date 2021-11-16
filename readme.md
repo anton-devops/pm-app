@@ -108,9 +108,9 @@ mkdocs build
 
   2. заходим в папку .github (здесь находятся файлы, связанные только с пайплайном)
 
-          cd .github/
+          cd pm-app/.github/
 
-  3. создаём файл .env (содержимое можно создавать своим, если сфоркать в свой репозиторий, так же нужно создать секреты в своём репозитории для переменных POSTGRES_PASSWORD и DOCKER_PASSWORD):
+  3. создаём файл .env (содержимое можно создавать своим, если сфоркать в свой репозиторий, так же нужно создать секреты в своём репозитории для переменной POSTGRES_PASSWORD):
           
           echo "VER='v1.0.0'" >> .env
           echo "POSTGRES_USER='postgres'" >> .env
@@ -119,8 +119,6 @@ mkdocs build
           echo "POSTGRES_DB='postgres'" >> .env
           echo "IMAGE_URL='ghcr.io/anton-devops/pm-app'" >> .env
           echo "DOCKER_URL='ghcr.io'" >> .env
-          echo "DOCKER_USER='anton-devops'" >> .env
-          echo "DOCKER_PASSWORD='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'" >> .env
 
 4. стартуем само приложение, базу и документацию коммандой:
 
